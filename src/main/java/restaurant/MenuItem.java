@@ -1,8 +1,10 @@
+package restaurant;
+
 import java.util.Date;
 
 public class MenuItem {
 
-    private String name;
+    private String foodName;
     private double price;
     private String description;
     private String category;
@@ -11,7 +13,7 @@ public class MenuItem {
 
     public MenuItem(String name, double price, String description, String category) {
         this.category = category;
-        this.name = name;
+        this.foodName = name;
         this.description = description;
         this.price = price;
         this.introDate = new Date();
@@ -19,11 +21,11 @@ public class MenuItem {
     }
 
     public String getName() {
-        return name;
+        return foodName;
     }
 
     public void setName(String name) {
-        this.name = name;
+        this.foodName = name;
     }
 
     public double getPrice() {
