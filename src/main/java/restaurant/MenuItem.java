@@ -1,6 +1,7 @@
 package restaurant;
 
 import java.util.Date;
+import java.util.Objects;
 
 public class MenuItem {
 
@@ -66,5 +67,29 @@ public class MenuItem {
 
     public void setIntroDate(Date introDate) {
         this.introDate = introDate;
+    }
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof MenuItem)) return false;
+        MenuItem menuItem = (MenuItem) o;
+        return Objects.equals(description, menuItem.description);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(description);
+    }
+
+    public String toString(){
+        return foodName + "\n" + description + "\n" + "$" + price + "\n" + category;
+    }
+
+    public void isFoodNew() {
+        if (isNew) {
+            System.out.println(foodName + " is a new item on our Menu.");
+        }
     }
 }
